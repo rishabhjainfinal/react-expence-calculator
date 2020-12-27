@@ -1,0 +1,50 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  overflow: auto;
+}
+
+/* nav bar */
+.nav-head {
+  width: 100%;
+  background: #BB64FF;
+  height: 8vh;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.56);
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  }
+  
+  .nav-text {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 2em;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin: auto;
+  
+  }
+  
+  .back-button{
+      align-content: center;
+      text-align: center;
+      position: relative;
+      top: 15%;
+      font-size: 2.5em;
+      color: white;
+      /* border: 2px solid black; */
+  }
+  
+  .forword-button{
+      align-content: center;
+      text-align: center;
+      position: relative;
+      top: 15%;
+      font-size: 2.5em;
+      color: white;
+      /* border: 2px solid black; */
+  }
+  
