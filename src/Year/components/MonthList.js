@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { useHistory } from 'react-router-dom'
 
 const MonthList = ({monthNames,UpdateCP,UpdateAM}) => {
+    let history = useHistory();
+
     const container = {
         hidden: { opacity: 1},
         visible: {
@@ -33,10 +36,12 @@ const MonthList = ({monthNames,UpdateCP,UpdateAM}) => {
                         <motion.div
                             key={index}
                             variants={item}
-                            onClick={(index,)=>{
+                            onClick={()=>{
                                 // undate current month and possition 
-                                UpdateAM(name)
                                 UpdateCP("Month")
+                                UpdateAM(name)
+                                let path = `/month`;
+                                history.push(path);
                             }}
                             className={monthNames[new Date().getUTCMonth()] === name ? "month-box current" :"month-box"}>
                                 {name}

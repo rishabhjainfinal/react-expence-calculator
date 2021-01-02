@@ -6,6 +6,10 @@
   overflow: auto;
 }
 
+a {
+  list-style: none;
+  color: white;
+}
 /* nav bar */
 .nav-head {
   width: 100%;

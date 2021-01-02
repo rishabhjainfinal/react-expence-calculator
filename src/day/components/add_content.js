@@ -74,7 +74,7 @@ const Add_content = ({currentData,updateData}) =>{
                             {<GrClose/>}
                         </motion.div>
                         <label className="label" htmlFor="title">Title :</label>
-                        <input className="input" id="title" placeholder="e.g. Milk."/>
+                        <input className="input" autoFocus id="title" placeholder="e.g. Milk."/>
                         <label className="label" htmlFor="anount">Amount :</label>
                         <input className="input" id="anount" type="number" placeholder="150"/>
                         <input className="submit-btn" type="submit" value="Add" />
