@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion,AnimatePresence} from "framer-motion";
+import { useHistory } from 'react-router-dom'
 
 function DayList({day_count,UpdateCP,UpdateAD,AM,AY,workingMonth}){
+    let history = useHistory();
+
     const container = {
         hidden: { opacity: 1},
         visible: {
@@ -30,15 +33,17 @@ function DayList({day_count,UpdateCP,UpdateAD,AM,AY,workingMonth}){
                             key={index}
                             variants={item}
                             whileTap={{ scale: 0.9 }}
-                            onClick={()=>{UpdateAD((index+1)+'/'+AM+'/'+AY)
+                            onClick={()=>{
+                                UpdateAD((index+1)+'/'+AM+'/'+AY)
                                 UpdateCP("Day")
+                                let path = `/day`;
+                                history.push(path);
                             }}
                             className={new Date().getDate() === index+1 && new Date().getMonth() === workingMonth ? "day-box current" :"day-box"}>
                                 {index + 1}
                             </motion.div>
                         )
-                })
-                }
+                })}
                 </AnimatePresence>
         </motion.div >
         )

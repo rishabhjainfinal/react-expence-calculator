@@ -33,7 +33,7 @@ function Day({date,CP,UpdateCP}) {
                 initial={{ opacity: 1 }} 
                 animate={{opacity: 1 }} 
                 transition={{duration:0.5}} 
-                exit={{opacity:0,x:100}}
+                exit={{opacity:0}}
                 id={date}
                 key={date}
                 className = "Day" >
@@ -45,7 +45,7 @@ function Day({date,CP,UpdateCP}) {
                 {/* add content to screen  */}
                 <AddContent currentData={currentData} updateData={updateData}/>
                 
-                <Total currentData = {currentData} />
+                <Total currentData = {currentData} date={date}/>
             </motion.div>
         </AnimatePresence>
     );

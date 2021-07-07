@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { motion } from "framer-motion"
 import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io';
 import {GrSave} from 'react-icons/gr';
 
+
 const nav_head = ({info,CP,UpdateCP,Save_in_excel}) => {
+    const back_url = `${CP === "Month"? "/year" : "/month" }` ;
+    const forword_url =  `${CP === "Month"? "/day" : "/month" }`;
+    // console.log(back_url)
+    // console.log(forword_url)
+    info = info.replaceAll('/',' ')
+
     return (
         < motion.div 
         initial={{y:-100}}
@@ -23,7 +31,7 @@ const nav_head = ({info,CP,UpdateCP,Save_in_excel}) => {
                         UpdateCP('Year')
                     }
                 }}
-                className="back-button"><IoIosArrowBack/></motion.div>
+                className="back-button"><Link to={back_url}><IoIosArrowBack/></Link></motion.div>
                 :
                 <div className="back-button" onClick={()=>{Save_in_excel()}}><GrSave/></div>
             }
@@ -49,7 +57,9 @@ const nav_head = ({info,CP,UpdateCP,Save_in_excel}) => {
                     }
                 }}
                 className="forword-button">
+                <Link to={forword_url}>
                     <IoIosArrowForward/>
+                </Link>
                 </motion.div>
                 :
                 <div></div>
